@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login 10</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+<script src="{{ url_for('static', filename='upload.js') }}"></script>
+
+</head>
+<body class="img js-fullheight" style="background-image: url(static/images/bgi2.jpg);">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Inborn Talents</h2>
+                </div>
+                </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                <h3 class="mb-4 text-center">Upload your fingerprints</h3>
+  <form action="/uploader?userId={{data[0]}}" method="POST" enctype="multipart/form-data">
+ 	<div class="form-group">
+ 		<label>1.Left Thumb</label>
+ 		<div class="custom-file">
+        <input type='file' onchange="readURL(this);"  name="L1" />
+    </div>
+	</div>
+
+ <div class="form-group">
+ 		<label>2.Left Index Finger</label>
+ 		<div class="custom-file">
+        <input type='file' onchange="readURL(this);" name="L2" />
+    </div>
+	</div>
+    <div class="form-group">
+ 		<label>3.Left Middle finger</label>
+ 		<div class="custom-file">
+        <input type='file' onchange="readURL(this);"  name="L3" />
+    </div>
+	</div>
+    <div class="form-group">
+ 		<label>4.Left Ring Finger</label>
+ 		<div class="custom-file">
+        <input type='file' onchange="readURL(this);"  name="L4" />
+    </div>
+	</div>
+    <div class="form-group">
+ 		<label>5.Left Small Finger</label>
+ 		<div class="custom-file">
+        <input type='file' onchange="readURL(this);"  name="L5" />
+    </div>
+	</div>
+    <div class="form-group">
+ 		<label>6.Right Thumb</label>
+ 		<div class="custom-file">
+        <input type='file' onchange="readURL(this);"  name="R1" />
+    </div>
+	</div>
+    <div class="form-group">
+ 		<label>7.Right Index Finger</label>
+ 		<div class="custom-file">
+        <input type='file' onchange="readURL(this);" name="R2" />
+    </div>
+	</div>
+    <div class="form-group">
+ 		<label>8.Right Middle Finger</label>
+ 		<div class="custom-file">
+        <input type='file' onchange="readURL(this);"  name="R3" />
+    </div>
+	</div>
+    <div class="form-group">
+ 		<label>9.Right Ring Finger</label>
+ 		<div class="custom-file">
+        <input type='file' onchange="readURL(this);"  name="R4" />
+    </div>
+	</div>
+    <div class="form-group">
+ 		<label>10. Right Little finger</label>
+ 		<div class="custom-file">
+        <input type='file' onchange="readURL(this);" name="R5" />
+    </div>
+	</div>
+ 
+   
+<button class="float-right btn btn-success"  type="submit">Submit & predict</button>
+
+<a href="/load?userId={{data[0]}}">load my report</a>
+
+    </section>
+
+    </form>
+        <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

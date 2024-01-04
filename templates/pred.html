@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Required meta tags -->
+
+
+     <link rel="stylesheet" type="text/css" href="static/css/upload.css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<title>Report</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<style>
+        *{
+          font-family: 'Roboto', sans-serif;
+          padding: 10px;
+          margin: 10px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-spacing: 10px;
+            padding: 10px;
+
+        }
+        .yeah{
+          padding: 30px;
+          margin-left: 20px;
+          text-align: center;
+        }
+        .bro{
+          margin-left: 20px;
+
+        }
+    </style>
+    <title>Report</title>
+</head>
+<body>
+  <div id="title">
+      <a href="/">
+   
+      </a>
+
+      {% if not loggedIn %}
+      <div id="signInButton">
+        <a class="link" href="/loginForm">Sign In</a>
+      </div>
+      {% else %}
+      <div class="dropdown">
+        <button class="dropbtn">Hello, <br />{{firstName}}</button>
+        <div class="dropdown-content">
+          <!-- <a href="/account/orders">Your orders</a> -->
+          <a href="/account/profile">Your profile</a>
+          <hr />
+          <a href="/logout">Sign Out</a>
+        </div>
+        
+      </div>
+      {% endif %}
+
+<div>
+  <h1 align="center">InBorn Talents Report</h1>
+  <div  class="logo" id="title">
+
+    <img style="vertical-align:middle;margin:0px 420px" id="logo" src= {{ url_for('static', filename='images/logo.jpg') }} />
+
+  </div>
+  <br>
+  <hr>
+
+  
+    
+      <div>
+
+ 
+     
+
+            <div id="uploader">
+              <h3>Analysis For</h3>
+              <table id="detail">
+                <tr>
+                  <td>first Name</td>
+                  <td>{{data[3]}}</td>
+                </tr>
+                <tr>
+                  <td>Last Name</td>
+                  <td>{{data[4]}}</td>
+                </tr>
+                <tr>
+                  <td>Age</td>
+                  <td>{{data[5]}}</td>
+                </tr>
+                <tr>
+                  <td>Gender</td>
+                  <td>{{data[6]}}</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>{{data[2]}}</td>
+                </tr>
+              </table>
+              <br>
+              <br>
+              
+              <h3>ANALYST APP</h3>
+              <h5>*please note that this report can be interpreted only certified analyst only*</h5>
+              <br>
+</div>
+ 
+             
+  <div  class="logo" id="types">
+
+    <img style="vertical-align:middle;margin:0px 420px"  id="types" id="types" src= {{ url_for('static', filename='images/type.jpg') }} />
+  </div><br>
+
+      
+<table  class="bro">
+  <tr>
+    <th align="center" style = "text-align:center" colspan="3">LEFT BRAIN</th>
+    <th>  </th>
+    <th align="center" style = "text-align:center" colspan="3">RIGHT BRAIN</th>
+     
+  </tr>
+  <tr>
+    <td >Rational Thinking,
+    Executive Planning,
+    Coordinating,
+    Cntrolling,
+    Self -Achievement</td>
+    <td>{{P1}}</td>
+    <td>{{p1}}</td>
+    <td class='yeah'>ACTION</td>
+    <td >Leadership,
+    Interpersonal Skills,
+    Goal Visualization intution,
+    Self Esteem,
+    Determination</td>
+    <td>{{P6}}</td>
+    <td>{{p6}}</td>
+  </tr>
+  <tr>
+    <td >Logic & Reasoning,
+        Analyzing & Computng Process,
+        Numeric,
+        Linguistic,
+        Grammar Concepts</td>`
+    <td>{{P2}}</td>
+    <td>{{p2}}</td>
+    <td class='yeah'>THINK</td>
+    <td >Imagination,
+    Ideas Formation,
+    Visualization,
+    3D Recognition,
+    Visual/Spatial Ability</td>
+    <td>{{P7}}</td>
+    <td>{{p7}}</td>
+  </tr>
+  <tr>
+    <td >Fine Motor Skills,
+    Action Identification,
+    Hand Control,
+    Movements,
+    Finger Skills</td>
+    <td>{{P3}}</td>
+    <td>{{p3}}</td>
+    <td  class='yeah'>TACTILE</td>
+    <td >Gross Motor Skills,
+    Body Movements,
+    Coordination,
+    Out-door activities,
+    Sport Activities</td>
+    <td>{{P8}}</td>
+    <td>{{p8}}</td>
+  </tr>
+  <tr>
+    <td >Language Ability & 
+    Understanding,
+    Hearing,
+    Identitfication,
+    Word Formation,
+    Word Memory</td>
+    <td>{{P4}}</td>
+    <td>{{p4}}</td>
+    <td class='yeah'>AUDITORY</td>
+    <td >Musk,
+    Sound,
+    Rhythm,
+    Voice Identification,
+    Listening Skills,
+    Emotions & Feelings</td>
+    <td>{{P9}}</td>
+    <td>{{p9}}</td>
+  </tr>
+  <tr>
+    <td >Visual Identification,
+    Reading,
+    Interpretation,
+    Observation Skills,
+    Nature Love</td>
+    <td>{{P5}}</td>
+    <td>{{p5}}</td>
+    <td class='yeah'>VISUAL</td>
+    <td >Visualization Art,
+    Visual Appreciation,
+    Drawing,
+    Aesthetic Sense,
+    Visual Interpretation</td>
+    <td>{{P0}}</td>
+    <td>{{p0}}</td>
+  </tr>
+</table>
+     
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+      
+  
+
+
+
+
+
+
+<div class="col-md-6 item text">
+          <h3 align="center">By -</h3>
+          <h4 align="center">Riya Kale</h4>
+          <h4 align="center">Maitreyi Pitale</h4>
+          <h4 align="center">Mansi Khamkar</h4>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
+  <h1>RIDGE COUNT - {{r1}}</h1>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+  <div class="container">
+  <div class="row">
+
+    <div class="col-sm">
+      <span class="border border-primary">
+        <img src="{{ user_image }}" alt="User Image" class="img-thumbnail">
+      </span>
+    </div>
+
+    <div class="col-sm">
+      <h1>Fingerprint  <span class="badge badge-secondary">{{p1}}</span></h1>
+      <h1>Ridge Count <span class="badge badge-secondary">{{r1}}</span></h1>
+    </div>
+
+  </div>
+</div>
+
+<div class="col-sm">
+      <h1>Fingerprint  <span class="badge badge-secondary">{{p2}}</span></h1>
+      <h1>Ridge Count <span class="badge badge-secondary">{{r2}}</span></h1>
+    </div>
+    <div class="col-sm">
+      <h1>Fingerprint  <span class="badge badge-secondary">{{p3}}</span></h1>
+      <h1>Ridge Count <span class="badge badge-secondary">{{r3}}</span></h1>
+    </div>
+    <div class="col-sm">
+      <h1>Fingerprint  <span class="badge badge-secondary">{{p4}}</span></h1>
+      <h1>Ridge Count <span class="badge badge-secondary">{{r4}}</span></h1>
+    </div>
+    <div class="col-sm">
+      <h1>Fingerprint  <span class="badge badge-secondary">{{p5}}</span></h1>
+      <h1>Ridge Count <span class="badge badge-secondary">{{r5}}</span></h1>
+    </div>
+    <div class="col-sm">
+      <h1>Fingerprint  <span class="badge badge-secondary">{{p6}}</span></h1>
+      <h1>Ridge Count <span class="badge badge-secondary">{{r6}}</span></h1>
+    </div>
+    <div class="col-sm">
+      <h1>Fingerprint  <span class="badge badge-secondary">{{p7}}</span></h1>
+      <h1>Ridge Count <span class="badge badge-secondary">{{r7}}</span></h1>
+    </div>
+    <div class="col-sm">
+      <h1>Fingerprint  <span class="badge badge-secondary">{{p8}}</span></h1>
+      <h1>Ridge Count <span class="badge badge-secondary">{{r8}}</span></h1>
+    </div>
+    <div class="col-sm">
+      <h1>Fingerprint  <span class="badge badge-secondary">{{p9}}</span></h1>
+      <h1>Ridge Count <span class="badge badge-secondary">{{r9}}</span></h1>
+    </div>
+    <div class="col-sm">
+      <h1>Fingerprint  <span class="badge badge-secondary">{{p0}}</span></h1>
+      <h1>Ridge Count <span class="badge badge-secondary">{{r0}}</span></h1>
+    </div>
+   -->
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
